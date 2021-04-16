@@ -4,8 +4,12 @@ import ExpenseContent from "./ExpenseContent"
 
 function App(){
   return(
-    <ExpenseContent />
+    <div>
+      <ExpenseContent />
+    </div>
   )
 }
 
 export default App;
+
+
