@@ -1,15 +1,13 @@
-import logo from "./logo.svg";
 import "./App.css";
-import ExpenseContent from "./ExpenseContent"
+import ExpenseHeader from "./ExpenseHeader";
 
-function App(){
-  return(
-    <div>
-      <ExpenseContent />
+function App() {
+  return (
+    <div className="main-container">
+      <ExpenseHeader />
+      <button className="addBtn">Add Expense</button>
     </div>
-  )
+  );
 }
 
 export default App;
-
-
