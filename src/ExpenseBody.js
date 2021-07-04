@@ -21,6 +21,7 @@ function ExpenseBody(props){
                         <td>{props.expenseData.description}</td>
                         <td>{props.expenseData.amount}</td>
                         <td>{props.expenseData.location}</td>
+                        <td>Testing</td>
                     </tr>
                 </tbody>
             </div>
