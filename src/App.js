@@ -1,35 +1,38 @@
-import React, { useState } from "react";
+import React from "react";
+import Budget from "./Components/Budget";
 import "bootstrap/dist/css/bootstrap.min.css";
-import Budgets from "./Components/Budgets";
-import Table from "./Components/Table";
-import data from "./data.json";
-import InputForm from "./Components/InputForm";
+import AddExpenseForm from "./AddExpenseForm";
+import ExpenseItem from "./Components/ExpenseItem";
 
 function App() {
-  const [showForm, setShowForm] = useState(false);
-  const handleAddItemClick = () => {
-    setShowForm(true);
-  };
-  const handleFormAddItem = (data) => {
-    // Do something with Data, insert into database.
-  };
-
   return (
     <div className="container">
-      <h1 className="mt3">Expense Tracker</h1>
-      <Budgets />
-      <InputForm show={showForm} onAddItem={handleFormAddItem} />
-      <button
-        variant="primary"
-        className="primary"
-        onClick={handleAddItemClick}
-      >
-        Add Item
-      </button>
-      <Table data={data} />
-      <button variant="primary" className="primary">
-        Add Expense
-      </button>
+      <header className="mt-3">
+        <h1>Expense Tracker</h1>
+      </header>
+      <div className="row mt-3">
+        <div className="col-sm">
+          <Budget />
+        </div>
+      </div>
+      <h3 className="mt-3">Add Expenses</h3>
+      <div className="row mt-3">
+        <div className="col-sm">
+          <AddExpenseForm />
+        </div>
+      </div>
+      <h3 className="mt-3">Expenses</h3>
+      <table>
+        <thead className="table-header">
+          <tr className="table-header-row">
+            <th>Date</th>
+            <th>Item</th>
+            <th>Amount</th>
+            <th>Description</th>
+          </tr>
+        </thead>
+        <ExpenseItem />
+      </table>
     </div>
   );
 }
