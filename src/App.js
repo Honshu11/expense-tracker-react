@@ -13,42 +13,31 @@ function App() {
   const [expenseItems, setExpenseItems] = useState([
     {
       id: 1,
-      date: null,
+      date: "8/11/21",
       item: "Redbull",
       amount: 3,
       description: "7 Eleven",
     },
-    {
-      id: 2,
-      date: null,
-      item: "Sandwich",
-      amount: 5,
-      description: "7 Eleven",
-    },
-    {
-      id: 3,
-      date: null,
-      item: "Gasoline",
-      amount: 33,
-      description: "Moe's Gas Station",
-    },
   ]);
-  
+
   const addExpense = (e) => {
     e.preventDefault();
-    const id = expenseItems[expenseItems.length - 1].id + 1
+    const id = expenseItems[expenseItems.length - 1].id + 1; //gets the length of array, targets id object from expenseItems then adds 1.
     const newExpense = {
       date,
       item,
       amount,
       description,
       id,
-    } 
-    const updateItems = [...expenseItems, newExpense]
+    };
+    const updateItems = [...expenseItems, newExpense]; //spread
     setExpenseItems(updateItems);
+  };
+
+  const deleteExpense = (id) => {
+    const items = expenseItems.filter(item => item.id !== id)
+    expenseItems(items);
   }
-
-
 
   return (
     <div className="container">
@@ -86,7 +75,7 @@ function App() {
             <th>Description</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="center">
           {expenseItems.map((item) => {
             return (
               <ExpenseItem
@@ -95,6 +84,8 @@ function App() {
                 item={item.item}
                 amount={item.amount}
                 description={item.description}
+                id={item.id}
+                deleteExpense={deleteExpense}
               />
             );
           })}
