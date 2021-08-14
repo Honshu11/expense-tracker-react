@@ -38,13 +38,13 @@ function AddExpenseForm(props) {
           />
         </div>
         <div className="col-sm">
-          <label htmlFor="description">Description</label>
+          <label htmlFor="location">Location</label>
           <input
             type="text"
             className="form-control"
-            id="description"
-            value={props.description}
-            onChange={(e) => props.setDescription(e.target.value)}
+            id="location"
+            value={props.location}
+            onChange={(e) => props.setLocation(e.target.value)}
           />
         </div>
         <div className="col-sm">

@@ -7,7 +7,7 @@ function ExpenseItem(props) {
       <td>{props.date}</td>
       <td>{props.item}</td>
       <td>{props.amount}</td>
-      <td>{props.description}</td>
+      <td>{props.location}</td>
       <TiDelete
         size="1.5em"
         onClick={() => props.deleteExpense(props.id)}

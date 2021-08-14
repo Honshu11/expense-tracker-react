@@ -3,13 +3,12 @@ import Budget from "./Components/Budget";
 import "bootstrap/dist/css/bootstrap.min.css";
 import AddExpenseForm from "./AddExpenseForm";
 import ExpenseItem from "./Components/ExpenseItem";
-import { TiPhoneOutline } from "react-icons/ti";
 
 function App() {
   const [date, setDate] = useState("");
   const [item, setItem] = useState("");
   const [amount, setAmount] = useState(0);
-  const [description, setDescription] = useState("");
+  const [location, setLocation] = useState("");
   const [expenseItems, setExpenseItems] = useState([
     {
       id: 1,
@@ -27,7 +26,7 @@ function App() {
       date,
       item,
       amount,
-      description,
+      location,
       id,
     };
     const updateItems = [...expenseItems, newExpense]; //spread
@@ -35,9 +34,9 @@ function App() {
   };
 
   const deleteExpense = (id) => {
-    const items = expenseItems.filter(item => item.id !== id)
+    const items = expenseItems.filter((item) => item.id !== id);
     expenseItems(items);
-  }
+  };
 
   return (
     <div className="container">
@@ -56,11 +55,11 @@ function App() {
             date={date}
             item={item}
             amount={amount}
-            description={description}
+            location={location}
             setDate={setDate}
             setItem={setItem}
             setAmount={setAmount}
-            setDescription={setDescription}
+            setLocation={setLocation}
             addExpense={addExpense}
           />
         </div>
@@ -72,10 +71,10 @@ function App() {
             <th>Date</th>
             <th>Item</th>
             <th>Amount</th>
-            <th>Description</th>
+            <th>Location</th>
           </tr>
         </thead>
-        <tbody className="center">
+        <tbody className="table-body">
           {expenseItems.map((item) => {
             return (
               <ExpenseItem
@@ -83,7 +82,7 @@ function App() {
                 date={item.date}
                 item={item.item}
                 amount={item.amount}
-                description={item.description}
+                location={item.location}
                 id={item.id}
                 deleteExpense={deleteExpense}
               />
