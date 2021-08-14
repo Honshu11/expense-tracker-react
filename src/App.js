@@ -15,7 +15,7 @@ function App() {
       date: "8/11/21",
       item: "Redbull",
       amount: 3,
-      description: "7 Eleven",
+      location: "7 Eleven",
     },
   ]);
 
