@@ -1,12 +1,12 @@
 import React from "react";
 
-//TODO: Add dynamic functionality to budget, remaining and spent once user updates Expense Tracker. 
+//TODO: Future feature to add dynamic functionality to budget, remaining and spent once user updates Expense Tracker.
 
 function Budget() {
   return (
     <div className="budget-container row">
       <div className="alert alert-success col-sm">
-        <span>Budget: $2000</span> 
+        <span>Budget: $2000</span>
       </div>
       <div className="alert alert-danger col-sm mx-2">
         <span>Remaining: $750</span>

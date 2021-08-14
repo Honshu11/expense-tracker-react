@@ -29,7 +29,7 @@ function App() {
       location,
       id,
     };
-    const updateItems = [...expenseItems, newExpense]; //spread
+    const updateItems = [...expenseItems, newExpense]; //spread operator
     setExpenseItems(updateItems);
   };
 
